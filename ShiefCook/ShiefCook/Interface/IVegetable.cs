@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace ShiefCook.Interface
 {
-    internal interface INameble
+    internal interface IVegetable
     {
-        string FirstName { get; }
+        string Name { get; }
 
-        string LastName { get; }
+        int Calories { get; }
+
+        int Weight { get; }
+
+        string Color { get; }
     }
 }
