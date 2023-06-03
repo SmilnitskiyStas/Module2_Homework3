@@ -1,4 +1,5 @@
 ﻿using ShiefCook.Model;
+using ShiefCook.Models;
 using ShiefCook.Vegetables;
 
 namespace ShiefCook
@@ -100,26 +101,11 @@ namespace ShiefCook
         /// <param name="vegetables">Масив овочів.</param>
         private void SortVegetablesInSalat(Vegetable[] vegetables)
         {
-            string[] vegetableName = new string[vegetables.Length];
-
-            // Отримання іменя овочів для виведення їх на консоль.
-            for (int i = 0; i < vegetables.Length; i++)
-            {
-                for (int y = 0; y < vegetableName.Length; y++)
-                {
-                    if (vegetableName[y] != vegetables[i].Name)
-                    {
-                        vegetableName[i] = vegetables[i].Name;
-                    }
-                }
-            }
-
-            Array.Sort(vegetableName);
+            Array.Sort(vegetables);
 
             Console.WriteLine("\nVegetables included in the salad\n");
 
-            // Відображення масиву овофів в салаті.
-            ShowInfoNameVegetables(vegetableName);
+            ShowInfoVegetable(vegetables);
         }
 
         /// <summary>
@@ -163,18 +149,6 @@ namespace ShiefCook
             for (int i = 0; i < vegetables.Length; i++)
             {
                 Console.WriteLine(vegetables[i].Name);
-            }
-        }
-
-        /// <summary>
-        /// Показує відформатовану інформацію овочів в салаті.
-        /// </summary>
-        /// <param name="info">Масив овочів.</param>
-        private void ShowInfoNameVegetables(string[] info)
-        {
-            for (int i = 0; i < info.Length; i++)
-            {
-                Console.WriteLine(info[i]);
             }
         }
 

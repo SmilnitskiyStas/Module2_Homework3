@@ -2,7 +2,7 @@
 
 namespace ShiefCook.Model
 {
-    internal class Vegetable : IVegetable
+    internal class Vegetable : IVegetable, IComparable
     {
         public string Name { get; set; }
 
@@ -22,6 +22,18 @@ namespace ShiefCook.Model
             Calories = calories;
             Weight = weigth;
             Color = color;
+        }
+
+        public int CompareTo(object? obj)
+        {
+            if (obj is Vegetable vegetable)
+            {
+                return Name.CompareTo(vegetable.Name);
+            }
+            else
+            {
+                throw new ArgumentException("Не коректне значення аргументу");
+            }
         }
     }
 }
